@@ -15,7 +15,8 @@ import org.junit.runner.RunWith;
                "pretty",
                "html:target/cucumber/cucumber.html",
                "junit:target/surefire-reports/cucumber.xml",
-       }
+       },
+       monochrome = true
 )
 // Clase de pruebas para JUnit
 public class DiccionarioTest {
