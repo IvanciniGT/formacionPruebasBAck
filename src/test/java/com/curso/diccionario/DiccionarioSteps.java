@@ -14,6 +14,8 @@ public class DiccionarioSteps {
     private SuministradorDeDiccionarios suministrador;
     private boolean existeDiccionario;
     private Optional<Diccionario> diccionario;
+
+
     @Given("Que tengo un suministrador de diccionarios")
     public void queTengoUnSuministradorDeDiccionarios() {
         suministrador = SuministradorDeDiccionariosFactory.getInstance();
@@ -36,17 +38,16 @@ public class DiccionarioSteps {
         // No hacemos nada... Lo damos por supuesto
     }
 
-    @When("pregunto al suministrador si tiene un diccionario para el idioma {string}")
+
+    @When("pregunto si tiene un diccionario para el idioma {string}")
     public void preguntoAlSuministradorSiTieneUnDiccionarioParaElIdioma(String idioma) {
         existeDiccionario = suministrador.tienesDiccionarioDe(idioma);
     }
-
     @Then("el suministrador debe devolver que {string} lo tiene")
     public void elSuministradorDebeDevolverQueLoTiene(String respuesta) {
         boolean respuestaDelSuministrador = respuesta.equalsIgnoreCase("si");
         assertEquals(respuestaDelSuministrador, existeDiccionario);
     }
-
     @When("solicito al suministrador un diccionario para el idioma {string}")
     public void solicitoAlSuministradorUnDiccionarioParaElIdioma(String idioma) {
         diccionario = suministrador.getDiccionario(idioma);
@@ -62,4 +63,5 @@ public class DiccionarioSteps {
     public void elSuministradorNoDebeDevolverUnDiccionario() {
         assertFalse(diccionario.isPresent());
     }
+
 }
