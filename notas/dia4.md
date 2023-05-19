@@ -64,7 +64,10 @@ Pruebas de sistema                  SI          √               x ? Que cojo n
 
 
 
+# Selenium
 
+Selenium permite automatizar operaciones en un navegador WEB.
+No es una herramienta de pruebas.
 
 
 

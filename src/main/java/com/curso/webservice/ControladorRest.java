@@ -23,6 +23,15 @@ public class ControladorRest {
         boolean existe = suministrador.tienesDiccionarioDe(idioma);
         return new ResponseEntity<>(existe, HttpStatus.OK);
     }
+    @GetMapping("/idioma/{idioma}/{palabra}")
+    public ResponseEntity<Boolean> existeDiccionarioIdioma(@PathVariable String idioma,@PathVariable String palabra){
+        boolean existe = suministrador.tienesDiccionarioDe(idioma);
+        if(existe) {
+            boolean existePalabra = suministrador.getDiccionario(idioma).get().existe(palabra);
+            return new ResponseEntity<>(existePalabra, existePalabra? HttpStatus.OK:HttpStatus.NOT_FOUND);
+        }else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
 }
 
 

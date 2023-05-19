@@ -30,6 +30,18 @@ public class ControladorRestTest {
     public void existeDiccionarioIdioma() throws Exception {
         clienteDeMentira.perform(MockMvcRequestBuilders.get("/api/v1/idioma/ES"))
                 .andExpect(status().isOk());
-                //.andExpect(jsonPath("$"))
+        //.andExpect(jsonPath("$"))
+    }
+    @Test
+    public void existePalabra() throws Exception {
+        clienteDeMentira.perform(MockMvcRequestBuilders.get("/api/v1/idioma/ES/manzana"))
+                .andExpect(status().isOk());
+        //.andExpect(jsonPath("$"))
+    }
+    @Test
+    public void noExistePalabra() throws Exception {
+        clienteDeMentira.perform(MockMvcRequestBuilders.get("/api/v1/idioma/ES/manana"))
+                .andExpect(status().isNotFound());
+        //.andExpect(jsonPath("$"))
     }
 }
