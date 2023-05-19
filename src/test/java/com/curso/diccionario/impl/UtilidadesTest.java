@@ -28,16 +28,16 @@ public class UtilidadesTest {
 
         assertTrue(palabras.isPresent());
         assertTrue(palabras.get().containsKey("termino1"));
-        assertEquals(palabras.get().get("termino1").size(),1); // 1 significado para termino1
+        assertEquals(1,palabras.get().get("termino1").size()); // 1 significado para termino1
         assertTrue(palabras.get().get("termino1").contains("significado 1")); // 1 significado para termino1
 
         assertTrue(palabras.get().containsKey("termino2"));
-        assertEquals(palabras.get().get("termino2").size(),2);
+        assertEquals(2,palabras.get().get("termino2").size());
         assertTrue(palabras.get().get("termino2").contains("significado 2a"));
         assertTrue(palabras.get().get("termino2").contains("significado 2b"));
 
         assertTrue(palabras.get().containsKey("termino3"));
-        assertEquals(palabras.get().get("termino3").size(),1);
+        assertEquals(1,palabras.get().get("termino3").size());
         assertTrue(palabras.get().get("termino3").contains("significado 3"));
     }
     @Test

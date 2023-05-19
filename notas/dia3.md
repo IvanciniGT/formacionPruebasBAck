@@ -36,3 +36,9 @@ Las imágenes de contenedor las sacamos de registries de repositorios de Imágen
 El más famoso es docker hub
 
 
+mvn sonar:sonar \
+    -Dsonar.token=squ_299236cb68259837a4e2408dd10a2a8bc2bb9a0b \
+    -Dsonar.host.url=http://3.250.131.187:81/
+
+
+Informe Jacoco
