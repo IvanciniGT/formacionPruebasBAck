@@ -53,3 +53,19 @@ Cómo de difícil es para un ser humano entender un código
             tarea5
         otros casos
             tarea6
+
+# Niveles de prueba
+
+Pruebas unitarias               √               ? NO                                                    1
+    vvv
+Pruebas de integración          SI √            ? NO                                                    2
+    vvv
+Pruebas de sistema                  SI          √               x ? Que cojo nes??? esta pasando?       3
+
+
+
+
+
+
+
+
