@@ -50,7 +50,6 @@ public interface Utilidades {
         if (urlDelFichero != null )
             return Optional.of(urlDelFichero);
         return Optional.empty();
-        
     }
     
     static int distancia(String str1, String str2) {

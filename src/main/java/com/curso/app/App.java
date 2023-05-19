@@ -19,17 +19,18 @@ public class App {
     public void ejecutar(String idioma, String palabra){
         if(!suministrador.tienesDiccionarioDe(idioma)){
             System.err.println("No se ha encontrado un diccionario para ese idioma");
-            System.exit(2);
-        }
-        Diccionario diccionario = suministrador.getDiccionario(idioma).get();
-        if(diccionario.existe(palabra)){
-            System.out.println("La palabra "+palabra+" existe");
-            System.out.println("Significados:");
-            diccionario.getDefiniciones(palabra).get().forEach( definicion -> System.out.println(" - "+definicion) );
-        }else{
-            System.out.println("La palabra "+palabra+" no existe");
-            System.out.println("Alternativas:");
-            diccionario.getSugerencias(palabra).forEach( sugerencia -> System.out.println(" - "+sugerencia) );
+            //System.exit(2);
+        } else {
+            Diccionario diccionario = suministrador.getDiccionario(idioma).get();
+            if (diccionario.existe(palabra)) {
+                System.out.println("La palabra " + palabra + " existe");
+                System.out.println("Significados:");
+                diccionario.getDefiniciones(palabra).get().forEach(definicion -> System.out.println(" - " + definicion));
+            } else {
+                System.out.println("La palabra " + palabra + " no existe");
+                System.out.println("Alternativas:");
+                diccionario.getSugerencias(palabra).forEach(sugerencia -> System.out.println(" - " + sugerencia));
+            }
         }
     }
 
