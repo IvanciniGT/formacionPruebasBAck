@@ -1,83 +1,46 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.curso</groupId>
-  <artifactId>curso-pruebas-jupiter</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+    <groupId>com.curso</groupId>
+    <artifactId>cursoTestingBack</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-  <name>CursoPruebasJupiter</name>
-  <url>http://maven.apache.org</url>
+    <!-- Dando valores a variables... Variables que usaremos nosotros... o variables que son usadas por los plugins que tiene maven -->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-  <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/junit/junit
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        -->
+    </dependencies>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.2</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
-    <!-- Me permite usar cucumber -->
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>7.12.0</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
-    <!-- Me permite ejecutar desde JUnit las pruebas de Cucumber -->
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-junit</artifactId>
-      <version>7.12.0</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
-    <!-- https://mvnrepository.com/artifact/org.mockito/mockito-core -->
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>4.11.0</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Montar una web con spriongboot -->
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
-      <version>2.7.12</version>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-test</artifactId>
-      <version>2.7.12</version>
-    </dependency>
-    <!-- https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine -->
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>4.9.1</version>
-    </dependency>
-
-    <!--
-      Springboot trae condigo JUnit 5
-      El plugin surefire al detectar JUnit 5, ya no ejecuta las pruebas de JUnit 4
-      Para que las ejecute, necesitamos la libreria "vintage"
-    -->
-    <dependency>
-      <groupId>org.junit.vintage</groupId>
-      <artifactId>junit-vintage-engine</artifactId>
-      <version>5.9.3</version>
-      <scope>test</scope>
-    </dependency>
-
-  </dependencies>
+    <build>
+        <plugins>
+            <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
